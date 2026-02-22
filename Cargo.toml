@@ -1,6 +1,6 @@
 [package]
 name = "branch_allocator"
-version = "1.0.0"
+version = "1.0.1"
 description = "A lock-free buddy allocator for `no_std`."
 license = "MIT OR Apache-2.0"
 edition = "2024"
