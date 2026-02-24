@@ -1,10 +1,15 @@
 //! Testing for the entire crate. This module is aware of only the crate root module and the target
 //! module, and uses only the public interface for testing.
+extern crate std;
+use std::vec::Vec;
 use crate::{BranchAllocator, target::Atomic};
 fn create(order: usize) -> BranchAllocator<'static> {
     let required = BranchAllocator::required(order);
-    let storage: &'static mut [Atomic] = Vec::leak(Vec::from_fn(required, |_| Atomic::new(0)));
-    BranchAllocator::new(storage, order).expect("failed to create allocator!")
+    let mut storage = Vec::with_capacity(required);
+    for _ in 0..storage.capacity() {
+        storage.push(Atomic::new(0));
+    }
+    BranchAllocator::new(Vec::leak(storage), order).expect("failed to create allocator!")
 }
 
 fn allocate_ok(alloc: &BranchAllocator, index: usize, order: usize) {
