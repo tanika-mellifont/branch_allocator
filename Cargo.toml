@@ -1,6 +1,6 @@
 [package]
 name = "branch_allocator"
-version = "1.0.3"
+version = "1.0.4"
 edition = "2024"
 description = "A lock-free buddy allocator for `no_std`."
 documentation = "https://docs.rs/branch_allocator"
