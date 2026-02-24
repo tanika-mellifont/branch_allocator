@@ -199,7 +199,6 @@ impl<'a, 'b> Cursor<'a, 'b> {
                     break 'climb;
                 }
                 data.unlock(parent);
-                eprintln!("unlocked parent slot {}", parent);
                 current = parent;
             }
             if self.depth < self.allocator.order {
