@@ -22,7 +22,7 @@
 //!
 //! This crate is dual-licensed under the MIT and Apache 2.0 licenses.
 //! See the LICENSE-* files in the repository root for details.
-#![feature(vec_from_fn)]
+#![no_std]
 mod branch;
 mod cursor;
 mod target;
