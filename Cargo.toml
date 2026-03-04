@@ -1,6 +1,6 @@
 [package]
 name = "branch_allocator"
-version = "1.0.5"
+version = "1.0.6"
 authors = ["Tanika Mellifont-Young <tanika.young@proton.me>"]
 edition = "2024"
 description = "A lock-free buddy allocator for `no_std`."
